@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row  page-header">
+        <div class="col-sm-11 col-md-11">
+            <h1>
+                <span class="text-left">Welcome Customer {{$parent.currentUser.name}}, </span>
+            </h1>
+        </div>
+        <div class="col-sm-1 col-md-1">
+            <h1>
+                <span class="text-right"><a href="#/login" class="btn btn-danger">logout</a></span>
+            </h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <form name="registrationForm" role="form">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <b>Profile Summary</b>
+                </div>
+
+                <div class="col-sm-12 col-md-6 col-lg-4 table-bordered jumbotron" ng-repeat="account in accounts">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-12 col-lg-12 text-center"><b>{{account.accName}}</b></div>
+                        <div class="row">
+                            <div class="col-sm-6 col-md-6 col-lg-6" ng-repeat="card in account.cards">
+                                <b>{{card.cardName}}</b><br> {{card.type}} - {{card.accountType}} - {{card.balance}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
